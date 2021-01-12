@@ -10,20 +10,18 @@ Write a script using JavaScript that creates a new message for the user every ti
 - Develop locally on my own computer.
 
 ## **TOPIC**
-Provide the user with a random recipe for some kind of fantasy/nonsense food. It should be formatted as a standard recipe: stating the name of the food, list the ingredients needed, and follow the steps to cook/bake the dish. The food itself should be entirely random, and the ingredients & steps should follow some kind of logic that makes sense for that food.
+Provide the user with a random potion recipe complete with fantasy ingredients and steps for brewing it.
 
 ## **TIMELINE**
-- Generate a random name for the dish.
-  * The dish name will be a combination of two elements: an adjective/descriptor followed by the name of the dish. Examples could include: Lunar Cake, Bloody Omelette, Electric Sausages, etc.
-  * Maybe implement side dishes into the recipe in the future.
-- Generate a list of ingredients for the recipe. These ingredients should make some kind of sense for the recipe in question.
-  * To accomplish this, each food/descriptor should have a selection of viable ingredients associated with it—perhaps in the form of an array.
-- Using the generated ingredients, formulate a list of steps to follow to create the recipe. Again, these steps should make some sense for the food in question.
-  * To reduce the complexity of this part, the number of steps should be limited. I'll start with a maximum of 6 possible steps for a recipe and may reduce that amount if it proves too complicated to implement.
+- Generate a random name for the potion from a subset of possible options.
+  * Have different names for "potion" too so that it isn't just "Potion of X" every time. Examples: elixir, essence of, liquid, distilled, etc.
+- Generate a list of random ingredients from a subset of possible options. Randomize the quantities of each ingredient as well.
+  * The ingredients should be divided into distinct categories, and each recipe should pull from the same categories for each ingredient. For instance, every potion should have a liquid base, followed by one or two solid ingredients, then a spice, and finally a garnish.
+- Using the generated ingredients, formulate a list of steps to follow to create the potion.
+  * To reduce the complexity of this part, the number of steps should be limited. I'll start with a maximum of 5 possible steps for a recipe and may reduce that amount if it proves too complicated to implement.
   * While the steps themselves should be random, their order matters. As such, each of the six possible steps should correlate to a specific aspect of the process. Some steps may be skipped depending on whether it makes sense for the current recipe. The current step logic is as follows:
-    1. Prep & preheat.
-    2. Combine raw ingredients.
-    3. Add further ingredients.
-    4. Process ingredients.
-    5. Prepare final mixture for baking/cooking.
-    6. Bake & serve.
+    1. Prepare the liquid base.
+    2. Process the first solid ingredient, then add it in if there's not a second solid ingredient.
+    3. If applicable, process the second solid ingredient and mix it in.
+    4. Add in the spice and brew it for a set amount of time/in a specific way.
+    5. Top with a garnish and serve.
